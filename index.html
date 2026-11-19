@@ -28,11 +28,14 @@ h1{font-size:clamp(26px,4vw,40px);line-height:1.05;font-weight:500;margin:0 0 6p
 .ctl input[type=checkbox]{width:18px;height:18px;accent-color:var(--acc)}
 .leg{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--mut);margin-top:6px}
 .sw{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:18px}
 .grid h2{font-size:16px;font-weight:500;margin:0 0 8px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-td{padding:6px 0;border-bottom:1px solid var(--line);vertical-align:top}
-td:last-child{text-align:right;white-space:nowrap;padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+td{padding:7px 0;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+td:first-child{width:46%;color:var(--mut)}
+td:last-child{text-align:right;padding-left:12px}
+.nb{white-space:nowrap}
+.note{margin-top:14px;font-size:14px;color:var(--mut)}
 tr:last-child td{border-bottom:0}
 .hint{font-size:13px;color:var(--mut);margin-top:8px}
 </style>
@@ -65,27 +68,28 @@ tr:last-child td{border-bottom:0}
 
 <div class="grid">
 <div class="card"><h2>Розміри</h2><table>
-<tr><td>Зовні</td><td>2,90 × 2,56 × 2,72 м</td></tr>
-<tr><td>Всередині</td><td>2,66 × 2,32 × 2,48 м</td></tr>
-<tr><td>Двері (світловий проєм)</td><td>1,2 × 2,0 м</td></tr>
-<tr><td>Візки</td><td>4 шт., 2 ряди × 2</td></tr>
-<tr><td>Поперек, зліва направо</td><td>0,36 · 0,50 · 0,05 · 0,50 · 0,40 · 0,50 · 0,35</td></tr>
+<tr><td>Зовні</td><td><span class="nb">2,90 × 2,56</span> <span class="nb">× 2,72 м</span></td></tr>
+<tr><td>Всередині</td><td><span class="nb">2,66 × 2,32</span> <span class="nb">× 2,48 м</span></td></tr>
+<tr><td>Двері, проєм</td><td class="nb">1,2 × 2,0 м</td></tr>
+<tr><td>Візки</td><td>4 шт., <span class="nb">2 ряди × 2</span></td></tr>
+<tr><td>Розмір візка</td><td class="nb">0,50 × 0,64 м</td></tr>
 </table></div>
 <div class="card"><h2>Сендвіч-панелі, 120 мм</h2><table>
-<tr><td>Стіни 2,90 м, 2 шт.</td><td>2,5 пан. × 2,60 м</td></tr>
-<tr><td>Стіни 2,32 м, 2 шт.</td><td>2 пан. × 2,60 м</td></tr>
-<tr><td>Стеля зверху</td><td>2,5 пан. × 2,56 м</td></tr>
-<tr><td>Підлога всередині</td><td>2 пан. × 2,66 м</td></tr>
-<tr><td><b>Разом</b></td><td><b>40,74 м²</b></td></tr>
+<tr><td>Стіни 2,90 м, 2 шт.</td><td><span class="nb">2,5 пан.</span> <span class="nb">× 2,60 м</span></td></tr>
+<tr><td>Стіни 2,32 м, 2 шт.</td><td><span class="nb">2 пан.</span> <span class="nb">× 2,60 м</span></td></tr>
+<tr><td>Стеля зверху</td><td><span class="nb">2,5 пан.</span> <span class="nb">× 2,56 м</span></td></tr>
+<tr><td>Підлога всередині</td><td><span class="nb">2 пан.</span> <span class="nb">× 2,66 м</span></td></tr>
+<tr><td><b style="color:var(--ink)">Разом</b></td><td class="nb"><b>40,74 м²</b></td></tr>
 </table></div>
 <div class="card"><h2>Обладнання</h2><table>
-<tr><td>Повітроохолоджувачі</td><td>Azak SO 245-610 × 2</td></tr>
-<tr><td>Габарит одного</td><td>1600 × 720 × 495 мм</td></tr>
-<tr><td>Нижній, від підлоги</td><td>0,18–0,90 м</td></tr>
-<tr><td>Верхній, від підлоги</td><td>1,40–2,12 м</td></tr>
-<tr><td>Відступ від стіни</td><td>0,35 м</td></tr>
+<tr><td>Повітро&shy;охолоджувачі</td><td>Azak <span class="nb">SO 245-610</span> <span class="nb">× 2 шт.</span></td></tr>
+<tr><td>Габарит одного</td><td><span class="nb">1600 × 720</span> <span class="nb">× 495 мм</span></td></tr>
+<tr><td>Нижній, від підлоги</td><td class="nb">0,18–0,90 м</td></tr>
+<tr><td>Верхній, від підлоги</td><td class="nb">1,40–2,12 м</td></tr>
+<tr><td>Відступ від стіни</td><td class="nb">0,35 м</td></tr>
 </table></div>
 </div>
+<p class="note">Поперек камери, зліва направо: 0,36 · візок 0,50 · 0,05 · візок 0,50 · 0,40 до вентиляторів · охолоджувач 0,50 · 0,35 до стіни = 2,66 м</p>
 </div>
 <script>
 {
@@ -172,7 +176,7 @@ function draw(){
   out.push('<polygon points="'+pts(f.q)+'" fill="'+f.col[f.k]+'" fill-opacity="'+f.op+'" stroke="'+f.col[3]+'" stroke-opacity="'+(f.op<.5?.45:1)+'" stroke-width="0.6" stroke-linejoin="round"/>');
   if(f.ex)for(const e of f.ex)out.push('<polygon points="'+pts(e.q)+'" fill="'+e.fill+'" stroke="'+e.st+'" stroke-width="0.4"/>');
  }
- if(!zoomed){const LB=[[[W/2,-0.4,0],'2,90 м'],[[-0.4,L/2,0],'2,56 м'],[[-0.35,-0.35,1.36],'2,72 м']];
+ if(!zoomed){const LB=[[[W/2,-0.4,0],'2,90 м'],[[-0.4,L/2,0],'2,56 м'],[[-0.3,L+0.35,1.36],'2,72 м']];
  for(const [p,t] of LB){const q=pr(p);out.push('<text x="'+q[0].toFixed(1)+'" y="'+q[1].toFixed(1)+'" text-anchor="middle" dominant-baseline="central" style="fill:var(--mut);font-size:13px;font-family:Geist,system-ui,sans-serif">'+t+'</text>');}}
  svg.innerHTML=out.join('');
 }
